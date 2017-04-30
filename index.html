@@ -15,15 +15,8 @@
         <div class="list-group-item" ng-repeat="product in store.products">
             <product-title></product-title>
             <!-- Image Gallery  -->
-            <div class="gallery" ng-show="product.images.length" ng-controller="GalleryController as gallery">
-                <div class="img-wrap">
-                    <img ng-src="{{product.images[gallery.current]}}" />
-                </div>
-                <ul class="img-thumbnails clearfix">
-                    <li class="small-image pull-left thumbnail" ng-repeat="image in product.images">
-                        <img ng-src="{{image}}" />
-                    </li>
-            </div>
+            <product-gallery>
+            </product-gallery>
             <product-panels>
             </product-panels>
         </div>

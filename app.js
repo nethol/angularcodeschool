@@ -10,13 +10,6 @@
     };
   });
 
-  app.controller('GalleryController', function () {
-    this.current = 0;
-    this.setCurrent = function () {
-      this.current = newGallery || 0;
-    };
-  });
-
   app.controller('StoreController', function () {
     this.products = gems;
   });
@@ -63,6 +56,20 @@
         };
       },
       controllerAs: 'panel'
+    };
+  });
+
+  app.directive('productGallery', function () {
+    return {
+      restrict: 'E',
+      templateUrl: 'product-gallery.html',
+      controller: function () {
+        this.current = 0;
+        this.setCurrent = function () {
+          this.current = newGallery || 0;
+        };
+      },
+      controllerAs: 'gallery'
     };
   });
 
